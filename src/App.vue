@@ -1,7 +1,8 @@
 <template>
 
   <div class="container">
-    <Header />
+    <!-- passing props to the Header component -->
+    <Header title="Task Manager"/>
   </div>
 </template>
 
@@ -12,6 +13,30 @@ export default {
   name: 'App',
   components: {
     Header
+  },
+  data() {
+    return {
+      tasks: []
+    }
+  },
+  created () {
+    this.tasks = [
+      {
+        id: 1,
+        title: 'Learn Vue',
+        completed: false
+      },
+      {
+        id: 2,
+        title: 'Learn Vuex',
+        completed: false
+      },
+      {
+        id: 3,
+        title: 'Learn Vue Router',
+        completed: false
+      }
+    ]
   }
 }
 </script>
